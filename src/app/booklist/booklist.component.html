@@ -13,13 +13,14 @@
   <tbody>
     <tr *ngFor= "let user of users">
       <td>{{ user.date | date:'d/M/y'}}</td>
-      <td>{{ user.state | lowercaseC }}</td>
+      <td>{{ user.state | lowercase }}</td>
       <td>{{ user.positive }}</td>
       <td>{{ user.negative}}</td>
       <td>{{ user.recovered}}</td>
       <td>{{ user.death}}</td>
       <td>{{ user.total}}</td>
 
+    
     </tr>
   </tbody>
 </table>
