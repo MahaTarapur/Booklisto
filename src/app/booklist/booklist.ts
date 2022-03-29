@@ -1,10 +1,14 @@
 export class Booklist
  {
     constructor(
-        public id:number,
-        public author:string,
-        public name:string,
-        public price:number
+        public date:any,
+        public states:any,
+        public positive:any,
+        public negative:any,
+        public recovered:any,
+        public death:any,
+        public total:any
+
     )
     {
         

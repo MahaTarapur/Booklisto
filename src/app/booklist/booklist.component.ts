@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BooklistService } from '../services/booklist.service';
 import { Booklist } from './booklist';
 
 @Component({
@@ -8,16 +9,17 @@ import { Booklist } from './booklist';
 })
 export class BooklistComponent implements OnInit {
 
-  bookList:Booklist[] = [
 
-    new Booklist(1,"maha","mahabharat",700),
-    new Booklist(2,"rahul","the life",1500),
-    new Booklist(3,"gouri","the photo world",2000)
+  users:any;
+  constructor(private service: BooklistService) { }
 
-  ];
-  constructor() { }
+  ngOnInit(): void
+  {
+    let response =  this.service.getBookList();
+    response.subscribe((data) => this.users = data);
 
-  ngOnInit(): void {
+
+
   }
 
 }
